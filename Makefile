@@ -8,9 +8,9 @@ SPEC_PRE_PRF = $(QT_PATH)/mkspecs/features/spec_pre.prf
 QDEVICE_PRI = $(QT_PATH)/mkspecs/qdevice.pri
 
 # All target
-all: $(PRO_FILE) $(QMAKE_CONF) $(SPEC_PRE_PRF) $(QDEVICE_PRI)
+all:
 	# Use tab for indentation
-	qmake $(PRO_FILE) -o Makefile
+	qmake KEY_PRO.pro
 	make
 
 # Clean target

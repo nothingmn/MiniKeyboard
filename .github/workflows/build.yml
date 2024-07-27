@@ -54,7 +54,7 @@ jobs:
     - name: List project files for debugging
       run: ls -R
 
-    - name: Build with Makefile
-      env:
-        QT_PATH: ${{ env.QT_PATH }}
-      run: make
+    - name: Build with qmake and make
+      run: |
+        qmake KEY_PRO.pro
+        make
