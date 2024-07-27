@@ -21,7 +21,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcc g++ make qt5-qmake qtbase5-dev qtbase5-dev-tools
 
-    - name: Set environment variables
+    - name: Set QT_PATH environment variable
       run: echo "QT_PATH=$(qtpaths --install-prefix)" >> $GITHUB_ENV
 
     - name: Display environment variables
@@ -29,6 +29,9 @@ jobs:
 
     - name: Display Makefile for debugging
       run: cat Makefile
+
+    - name: List project files for debugging
+      run: ls -R
 
     - name: Build with Makefile
       env:
