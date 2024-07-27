@@ -1,6 +1,5 @@
 # Define environment variables for paths
 QT_PATH ?= /opt/qt5 # Adjust this path according to the environment (use the appropriate Qt installation path)
-MINGW_PATH ?= /opt/mingw # Adjust this path if necessary
 
 # Files
 PRO_FILE = ../KEY_PRO.pro
