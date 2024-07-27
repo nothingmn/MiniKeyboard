@@ -9,11 +9,11 @@ QDEVICE_PRI = $(QT_PATH)/mkspecs/qdevice.pri
 
 # All target
 all: $(PRO_FILE) $(QMAKE_CONF) $(SPEC_PRE_PRF) $(QDEVICE_PRI)
-    # Add your build commands here, for example:
-    qmake $(PRO_FILE) -o Makefile
-    make
+	# Use tab for indentation
+	qmake $(PRO_FILE) -o Makefile
+	make
 
 # Clean target
 clean:
-    # Add clean commands if needed
-    rm -f Makefile
+	# Use tab for indentation
+	rm -f Makefile

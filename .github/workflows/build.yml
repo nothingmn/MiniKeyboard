@@ -24,6 +24,9 @@ jobs:
     - name: Set environment variables
       run: echo "QT_PATH=$(qtpaths --install-prefix)" >> $GITHUB_ENV
 
+    - name: Display environment variables
+      run: printenv
+
     - name: Display Makefile for debugging
       run: cat Makefile
 
