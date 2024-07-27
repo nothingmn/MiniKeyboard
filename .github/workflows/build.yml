@@ -24,6 +24,27 @@ jobs:
     - name: Set QT_PATH environment variable
       run: echo "QT_PATH=$(qtpaths --install-prefix)" >> $GITHUB_ENV
 
+    - name: Generate .pro file
+      run: |
+        cat <<EOL > KEY_PRO.pro
+        TEMPLATE = app
+        TARGET = MiniKeyboard
+        CONFIG += console c++11
+
+        INCLUDEPATH += src include
+
+        SOURCES += src/main.cpp \
+                   src/keyboard.cpp \
+                   src/keymap.cpp
+
+        HEADERS += src/keyboard.h \
+                   src/keymap.h \
+                   include/some_header1.h \
+                   include/some_header2.h
+
+        QT += core gui
+        EOL
+
     - name: Display environment variables
       run: printenv
 
