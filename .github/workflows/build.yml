@@ -19,10 +19,15 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcc make
+        sudo apt-get install -y gcc make qt5-qmake qt5-default
+
+    - name: Set environment variables
+      run: echo "QT_PATH=$(qtpaths --install-prefix)" >> $GITHUB_ENV
 
     - name: Display Makefile for debugging
       run: cat Makefile
 
     - name: Build with Makefile
+      env:
+        QT_PATH: ${{ env.QT_PATH }}
       run: make
